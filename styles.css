@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'cartoonish'; /* Provide a name for your custom font */
+    src: url('./fonts/alegreya-sans.black-italic.ttf');
+}
+
+:root {
+    --background-color: #fab700;
+    --color-light: #fff;
+    --color-dark: #212121;
+    --color-signal: #fab700;
+    --primary-dark: #000;
+    --primary-light: #ededed;
+    --secondary-light: #fefefe;
+    
+    --color-background: var(--color-light);
+    --color-text: var(--color-dark);
+    --color-accent: var(--color-signal);
+    
+    --size-bezel: .5rem;
+    --size-radius: 4px;
+}
+    
+body {
+    background-color: var(--background-color);
+    font-family: "Luckiest Guy", cursive;
+    overflow: hidden;
+}
+
+.heading {
+    font-size: 5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'cartoonish', sans-serif;
+}
+
+.game-container {
+    width: 600px;
+    height: 600px;
+    display: grid;
+    box-shadow: inset -3em 3em rgba(0,0,0,0), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0,0,0,0);
+    background: var(--color-background);
+    margin: 0;
+    border-radius: var(--size-radius);
+    border: 3px solid #000;
+    box-shadow: .5rem .5rem 0 0 #000;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.grid-item {
+    display: flex;
+    border: 3px solid black;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    font-family: 'cartoonish', sans-serif;
+    box-sizing: border-box; 
+    width: 100%; 
+    height: 100%; 
+}
+
+/* Add these rules to prevent resizing */
+.grid-item:focus,
+.grid-item:active {
+    outline: none;
+}
+
+.reset {
+    margin-top: 40px;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: 'cartoonish', sans-serif;
+    font-size: 50px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.reset:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+.reset:hover:after {
+    transform: translate(0, 0);
+}
+
+.reset:active {
+    background-color: #fff;
+    outline: 0;
+}
+
+.reset:hover {
+    outline: 0;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.turn-indicator {
+    font-size: 2rem;
+    margin-bottom: 0px;
+}
+
+.cuphead-image {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    margin: 0px; /* Adjust the margin as needed */
+    padding: 0px;
+}
+
+.cuphead {
+    width: 400px; /* Adjust the width as needed */
+    height: auto;
+    border-radius: 8px; /* Optional: Add a border radius for rounded corners */
+}
+
+footer {
+    font-family: sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8; 
+    text-align: center;
+    padding: 10px; 
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+.github-icon {
+    width: 30px; 
+    height: auto;
+    margin-left: 10px;
+}
